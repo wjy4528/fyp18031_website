@@ -84,26 +84,26 @@ section{
     color: #fff;
 }
 .form-control:-moz-placeholder { /* Firefox 18- */
-    color: #fff;  
+    color: #fff;
 }
 .form-control::-moz-placeholder {  /* Firefox 19+ */
-    color: #fff;  
+    color: #fff;
 }
-.form-control:-ms-input-placeholder {  
-    color: #fff;  
+.form-control:-ms-input-placeholder {
+    color: #fff;
 }
 
 .element .form-control::-webkit-input-placeholder {
     color: #424242;
 }
 .element .form-control:-moz-placeholder { /* Firefox 18- */
-    color: #424242;  
+    color: #424242;
 }
 .element .form-control::-moz-placeholder {  /* Firefox 19+ */
-    color: #424242;  
+    color: #424242;
 }
-.element .form-control:-ms-input-placeholder {  
-    color: #424242;  
+.element .form-control:-ms-input-placeholder {
+    color: #424242;
 }
 
 
@@ -146,43 +146,43 @@ section{
     height: 68px;
 	display:block;
 }
-.data-extraction{
-	background:transparent url(../images/data-extraction.png) no-repeat;
+.data-retrieval{
+	background:transparent url(../images/data-retrieval.jpg) no-repeat;
 	background-size: contain;
     width: 120px;
     height: 120px;
 	display:block;
 }
-.data-visualization{
-	background:transparent url(../images/data-visualization.png) no-repeat;
+.data-preprocessing{
+	background:transparent url(../images/data-preprocessing.png) no-repeat;
 	background-size: contain;
     width: 120px;
     height: 120px;
 	display:block;
 }
-.pattern-analysis {
-	background:transparent url(../images/pattern-analysis.png) no-repeat;
+.feature-identification {
+	background:transparent url(../images/feature-identification.png) no-repeat;
 	background-size: contain;
     width: 120px;
     height: 120px;
 	display:block;
 }
-.smart-filtering{
-	background:transparent url(../images/smart-filtering.png) no-repeat;
+.stock-price-prediction{
+	background:transparent url(../images/stock-price-prediction.png) no-repeat;
 	background-size: contain;
     width: 120px;
     height: 120px;
 	display:block;
 }
-.intelligent-matching{
-	background:transparent url(../images/intelligent-matching.png) no-repeat;
+.computation-distributing{
+	background:transparent url(../images/computation-distributing.png) no-repeat;
 	background-size: contain;
     width: 120px;
     height: 120px;
 	display:block;
 }
-.outcome-prediction{
-	background:transparent url(../images/outcome-prediction.png) no-repeat;
+.prediction-acceleration{
+	background:transparent url(../images/prediction-acceleration.png) no-repeat;
 	background-size: contain;
     width: 120px;
     height: 120px;

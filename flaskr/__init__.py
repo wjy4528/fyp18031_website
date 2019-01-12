@@ -2,6 +2,9 @@ import os
 
 from flask import Flask
 from flask import render_template
+from flask import request
+from flask import Response
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 
 def create_app(test_config=None):
@@ -35,6 +38,34 @@ def create_app(test_config=None):
     @app.route('/demo')
     def demo():   
         return render_template("./demo.html", title='Home')
+
+    @app.route('/background_process_test')
+    def background_process_test():
+        print ("Hello")
+        return "nothing"
+
+    @app.route('/loadDoc')
+    def loadDoc():
+        ind = int(request.args.get("id"))
+        resource_path = os.path.join(app.root_path, 'news_reuters.csv')
+        with open(resource_path, encoding = 'UTF-8') as f:
+            for num, line in enumerate(f):
+                if num < ind:
+                    continue
+                else:
+                    sia = SentimentIntensityAnalyzer()
+                    line = line.strip().split(',')
+                    if len(line) not in [6, 7]:
+                        continue
+                    if len(line) == 6:
+                        ticker, name, day, headline, body, newsType = line
+                    else:
+                        ticker, name, day, headline, body, newsType, suggestion = line
+                    content = headline + ' ' + body
+                    pscores = sia.polarity_scores(content)['compound']
+                    print("scoresss" + str(pscores))
+                    return str(pscores),200
+            return Response("{}", status=201, mimetype='application/json')
     return app
 
 

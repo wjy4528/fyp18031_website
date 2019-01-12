@@ -2,6 +2,8 @@ import os
 
 from flask import Flask
 from flask import render_template
+from flask import jsonify
+
 
 
 def create_app(test_config=None):
@@ -29,12 +31,16 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/index')
     def index():
-        
+
         return render_template("./index.html", title='Home')
 
     @app.route('/demo')
-    def demo():   
+    def demo():
         return render_template("./demo.html", title='Home')
+
+    @app.route('/background_process_test')
+    def background_process_test():
+        res = {'msg':'you got it'}
+        return jsonify(res)
+
     return app
-
-

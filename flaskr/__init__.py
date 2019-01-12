@@ -2,14 +2,12 @@ import os
 
 from flask import Flask
 from flask import render_template
-<<<<<<< HEAD
 from flask import request
 from flask import Response
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-=======
+
 from flask import jsonify
 
->>>>>>> 3eb0dd63c754ca9d9acd1a35117054b5f43d8e00
 
 
 def create_app(test_config=None):
@@ -55,11 +53,12 @@ def create_app(test_config=None):
         ind = int(request.args.get("id"))
         resource_path = os.path.join(app.root_path, 'news_reuters.csv')
         with open(resource_path, encoding = 'UTF-8') as f:
+            
             for num, line in enumerate(f):
                 if num < ind:
+                    
                     continue
                 else:
-                    sia = SentimentIntensityAnalyzer()
                     line = line.strip().split(',')
                     if len(line) not in [6, 7]:
                         continue
@@ -68,16 +67,10 @@ def create_app(test_config=None):
                     else:
                         ticker, name, day, headline, body, newsType, suggestion = line
                     content = headline + ' ' + body
+                    sia = SentimentIntensityAnalyzer()
                     pscores = sia.polarity_scores(content)['compound']
                     print("scoresss" + str(pscores))
                     return str(pscores),200
+                
             return Response("{}", status=201, mimetype='application/json')
-
-
-
-    @app.route('/background_process_test')
-    def background_process_test():
-        res = {'msg':'you got it'}
-        return jsonify(res)
-
     return app

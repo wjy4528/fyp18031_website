@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
+{% block content %}
 
-
-        <title>FYP18031-Fintech Application | Home</title>
-        <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo-icon.png"/> -->
-
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
-        <link href="assets/css/timeline.css" rel='stylesheet' type='text/css'>
-
-        <link href="assets/css/owl.carousel.css" rel="stylesheet">
-        <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
-
-        <link href="assets/css/magnific-popup.css" rel="stylesheet">
-
-        <link href="assets/css/style.css" rel="stylesheet">
-
-
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
         <div id="menu-item" class="menu-item hide-menu">
             <div class="container">
                 <ul>
@@ -216,97 +190,11 @@
                 <div class="container">
                     <h2 class="title">Architecture Design</h2>
                     <div class="row">
-                        <img src = "assets/images/architecture.png">
+                        <img src = {{url_for('static', filename='images/architecture.png')}}>
                     </div>
 
                 </div>
             </section>
-
-			<!-- <section id="workstation" class="work section">
-                <div class="container">
-                    <h2 class="title">Our workstations</h2>
-                    <div id="workstation-slider" class="owl-carousel">
-                        <div class="item">
-                            <div class="ubutia-card">
-                                <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/app_detail.png">
-                                </div>
-                                <div class="ubutia-card-content">
-                                    <h3>HKUEDM</h3>
-                                    <p>
-										HKUEDM - Applicant Detail
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="ubutia-card">
-                                <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/prediction-tfidf.png">
-                                </div>
-                                <div class="ubutia-card-content">
-                                    <h3>HKUEDM</h3>
-                                    <p>
-										HKUEDM - Prediction Table (TF-IDF)
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="ubutia-card">
-                                <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/prediction_bow.png">
-                                </div>
-                                <div class="ubutia-card-content">
-                                    <h3>HKUEDM</h3>
-                                    <p>
-										HKUEDM - Prediction Table (Bag-of-words)
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="ubutia-card">
-                                <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/audio.png">
-                                </div>
-                                <div class="ubutia-card-content">
-                                    <h3>Audio Data Extraction</h3>
-                                    <p>
-                                        Audio multimedia extraction web application
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="ubutia-card">
-                                <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/visual.png">
-                                </div>
-                                <div class="ubutia-card-content">
-                                    <h3>Visual Data Extraction</h3>
-                                    <p>
-                                        Visual multimedia extraction web application
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="ubutia-card">
-                                <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/poster.jpg">
-                                </div>
-                                <div class="ubutia-card-content">
-                                    <h3>Poster</h3>
-                                    <p>
-										FYP Poster Exhibition
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
 
             <section class="timeline" id="progress">
               <div class="container">
@@ -317,7 +205,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <ul>
                 <div class = "background_image"></div>
                 <li>
@@ -387,7 +275,7 @@
                         <div class="col-sm-3">
                             <div class="ubutia-card">
                                 <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/smyiu.jpg">
+                                    <img class="img-responsive" src={{url_for('static', filename='images/smyiu.jpg')}}>
                                 </div>
                                 <div class="ubutia-card-content">
                                     <h3>Dr. SM Yiu</h3>
@@ -400,7 +288,7 @@
                         <div class="col-sm-3">
                             <div class="ubutia-card">
                                 <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/ru.jpg">
+                                    <img class="img-responsive" src={{url_for('static', filename='images/ru.jpg')}}>
                                 </div>
                                 <div class="ubutia-card-content">
                                     <h3>Ru Chiang</h3>
@@ -413,7 +301,7 @@
                         <div class="col-sm-3">
                             <div class="ubutia-card">
                                 <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/justin.jpg">
+                                    <img class="img-responsive" src={{url_for('static', filename='images/justin.jpg')}}>
                                 </div>
                                 <div class="ubutia-card-content">
                                     <h3>Justin Wang</h3>
@@ -426,7 +314,7 @@
                         <div class="col-sm-3">
                             <div class="ubutia-card">
                                 <div class="ubutia-card-header">
-                                    <img class="img-responsive" src="assets/images/ray.jpg">
+                                    <img class="img-responsive" src={{url_for('static', filename='images/ray.jpg')}}>
                                 </div>
                                 <div class="ubutia-card-content">
                                     <h3>Ray Huang</h3>
@@ -483,12 +371,4 @@
                 </div>
             </footer>
         </div>
-
-        <script src="assets/js/jquery-3.1.1.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/jquery.magnific-popup.js"></script>
-        <script src="assets/js/script.js"></script>
-        <script src="assets/js/timeline.js"></script>
-    </body>
-</html>
+{% endblock %}

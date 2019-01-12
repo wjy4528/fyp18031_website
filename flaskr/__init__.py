@@ -2,9 +2,14 @@ import os
 
 from flask import Flask
 from flask import render_template
+<<<<<<< HEAD
 from flask import request
 from flask import Response
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+=======
+from flask import jsonify
+
+>>>>>>> 3eb0dd63c754ca9d9acd1a35117054b5f43d8e00
 
 
 def create_app(test_config=None):
@@ -32,12 +37,13 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/index')
     def index():
-        
+
         return render_template("./index.html", title='Home')
 
     @app.route('/demo')
-    def demo():   
+    def demo():
         return render_template("./demo.html", title='Home')
+
 
     @app.route('/background_process_test')
     def background_process_test():
@@ -66,6 +72,12 @@ def create_app(test_config=None):
                     print("scoresss" + str(pscores))
                     return str(pscores),200
             return Response("{}", status=201, mimetype='application/json')
+
+
+
+    @app.route('/background_process_test')
+    def background_process_test():
+        res = {'msg':'you got it'}
+        return jsonify(res)
+
     return app
-
-

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -69,3 +70,38 @@
     </script>
 
 </html>
+=======
+{% extends 'base.html' %}
+{% block content %}
+        <div class='container'>
+        <h3>Test</h3>
+            <form>
+                <a href=# id=test><button class='btn btn-default'>Test</button></a>
+            </form>
+        </div>
+        <p class='background_process_test'></p>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type=text/javascript>
+                $(function() {
+                  $('a#test').bind('click', function() {
+                    $.getJSON('/background_process_test',
+                        function(data) {
+                            console.log("got it");
+                      //do nothing
+                    });
+                    return false;
+                  });
+                });
+        </script>
+
+
+        <script src={{url_for('static', filename='js/jquery-3.1.1.js')}}></script>
+        <script src={{url_for('static', filename='js/bootstrap.min.js')}}></script>
+        <script src={{url_for('static', filename='js/owl.carousel.min.js')}}></script>
+        <script src={{url_for('static', filename='js/jquery.magnific-popup.js')}}></script>
+        <script src={{url_for('static', filename='js/script.js')}}></script>
+        <script src={{url_for('static', filename='js/timeline.js')}}></script>
+
+{% endblock %}
+>>>>>>> 3eb0dd63c754ca9d9acd1a35117054b5f43d8e00
